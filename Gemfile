@@ -16,7 +16,9 @@ gem 'font-awesome-sass'
 gem 'simple_form'
 gem 'autoprefixer-rails'
 
+
 group :development, :test do
+  gem 'faker', '~> 1.5.0'
   gem 'binding_of_caller'
   gem 'better_errors'
   gem 'quiet_assets'
