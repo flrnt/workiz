@@ -7,9 +7,12 @@ class BooksController < ApplicationController
   end
   def new
     @book = Book.new
+    @collection = Collection.new
   end
   def create
     @book = Book.create(book_params)
+    @collection = Collection.new(book_id: @book.id, user_id: current_user.id, available: true)
+    @collection.save
     redirect_to books_path
   end
   def edit
