@@ -2,3 +2,6 @@
 <h1>Details of the masterpiece</h1>
 <h2><%= @book.title %></h2>
 <p><%= @book.author %></p>
+
+<%= link_to "Edit", edit_book_path(@book) %> | <%= link_to "Delete", book_path(@book), method: :delete,
+data: { confirm: "Êtes-vous sûr?" } %>
