@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  collection_id: 
+  user_id: 
+  in_date: 2015-09-22 16:09:37
+  out_date: 2015-09-22 16:09:37
+
+two:
+  collection_id: 
+  user_id: 
+  in_date: 2015-09-22 16:09:37
+  out_date: 2015-09-22 16:09:37
