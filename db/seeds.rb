@@ -7,6 +7,7 @@ Book.destroy_all
   book = Book.new({
     author: Faker::Name.name,
     title: Faker::Book.title,
+    description: Faker::Lorem.paragraph(rand(1..20)),
   })
   book.save
 end
