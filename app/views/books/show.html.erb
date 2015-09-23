@@ -5,9 +5,9 @@
 
 <p><%= @book.description %></p>
 
-<p>This book is own by : <%= User.find(Collection.where(book_id:@book.id)[0][:user_id]).email %></p>
+<p>This book is own by : <%= User.find(Collection.where(book_id:@book.id)[0][:user_id]).email %>. <%= link_to "Borrow him", "#", class: 'btn btn-primary' %></p>
+
 
 <%= link_to "Edit", edit_book_path(@book) %> | <%= link_to "Delete", book_path(@book), method: :delete,
 data: { confirm: "Are you sure?" } %>
-<br>
-<%= link_to "Borrow", "#" %>
+
