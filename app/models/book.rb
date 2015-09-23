@@ -1,3 +1,3 @@
 class Book < ActiveRecord::Base
-  belongs_to :user, through: :collections
+  belongs_to :user
 end
