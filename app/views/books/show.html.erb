@@ -1,11 +1,11 @@
 <%= link_to "home", books_path %>
-<h1>Details of the masterpiece</h1>
+
 <h2><%= @book.title %></h2>
-<p><%= @book.author %></p>
+<p>By <%= @book.author %></p>
 
 <p>This book is own by : <%= User.find(Collection.where(book_id:@book.id)[0][:user_id]).email %></p>
 
 <%= link_to "Edit", edit_book_path(@book) %> | <%= link_to "Delete", book_path(@book), method: :delete,
-data: { confirm: "Êtes-vous sûr?" } %>
+data: { confirm: "Are you sure?" } %>
 <br>
 <%= link_to "Borrow", "#" %>
