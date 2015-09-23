@@ -1,9 +1,17 @@
-<h1>List of books</h1>
+<h1 class="text-center">List of books</h1>
 
-<ul>
-  <% @books.each do |book| %>
-    <li>
-      <p><strong><%= link_to book.title, book_path(book) %></strong>, by <%= book.author %></p>
-    </li>
-  <% end %>
-</ul>
+<div class="container">
+  <div class="row col-xs-12">
+    <div class="list-group">
+      <% @books.each do |book| %>
+        <%= link_to(book, class: "list-group-item") do %>
+          <h4 class="list-group-item-heading"><%= book.title %></h4>
+          <p class="list-group-item-text">by <%= book.author %></p>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+
+
