@@ -1,6 +1,5 @@
 require 'faker'
 
-
 Collection.destroy_all
 
 Book.destroy_all
@@ -36,11 +35,13 @@ Book.find_each do |book|
   b_ids << book.id
 end
 
+i = 0
 40.times do
   collection = Collection.new({
-    user_id: u_ids.sample,
-    book_id:b_ids.sample,
+    user_id: u_ids[i],
+    book_id:b_ids[i],
     available:true,
   })
   collection.save
+  i+=1
 end
