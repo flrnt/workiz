@@ -1,16 +1,17 @@
 <%= link_to "home", books_path %>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <h2><%= @book.title %></h2>
+      <p>By <%= @book.author %></p>
 
-<h2><%= @book.title %></h2>
-<p>By <%= @book.author %></p>
+      <p class="well well-lg"><%= @book.description %></p>
 
-<p><%= @book.description %></p>
-
-<p>This book is own by : <%= User.find(Collection.where(book_id:@book.id)[0][:user_id]).email %></p>
-<%= link_to "Borrow him", "#", class: 'btn btn-default' %>
+      <p>This book is own by : <%= User.find(Collection.where(book_id:@book.id)[0][:user_id]).email %></p>
+      <%= link_to "Borrow him", "#", class: 'btn btn-default' %>
+    </div>
+  </div>
+</div>
 <br>
-<br>
-
-
 <%= link_to "Edit", edit_book_path(@book), class: 'btn btn-info' %> <%= link_to "Delete", book_path(@book), class: 'btn btn-danger', method: :delete,
 data: { confirm: "Are you sure?" } %>
-
