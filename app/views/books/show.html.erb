@@ -7,7 +7,7 @@
 
       <p class="well well-lg"><%= @book.description %></p>
 
-      <p>This book is own by : <%= "#{@owner.first_name} #{@owner.last_name.slice(0)}." %></p>
+      <p>This book is own by : <%= (@owner.first_name.nil? || @owner.last_name.nil?) ? "#{@owner.email}" : "#{@owner.first_name} #{@owner.last_name.slice(0)}." %></p>
       <%= link_to "Borrow it", "#", class: 'btn btn-default' %>
     </div>
   </div>
