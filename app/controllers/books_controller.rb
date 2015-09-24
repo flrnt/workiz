@@ -12,7 +12,7 @@ class BooksController < ApplicationController
     @collection = Collection.new
   end
   def create
-    @book = Book.create(book_params)
+    @book = current_user.books.build(book_params)
     authorize @book
     @collection = Collection.new(book_id: @book.id, user_id: current_user.id, available: true)
     @collection.save
