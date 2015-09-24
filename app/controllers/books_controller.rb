@@ -5,6 +5,7 @@ class BooksController < ApplicationController
   end
   def show
     @owner = User.find(Collection.where(book_id:@book.id)[0][:user_id])
+    @collection = Collection.where(book_id:@book.id)[0]
   end
   def new
     @book = Book.new
@@ -14,6 +15,7 @@ class BooksController < ApplicationController
   def create
     @book = current_user.books.build(book_params)
     authorize @book
+    @book.save
     @collection = Collection.new(book_id: @book.id, user_id: current_user.id, available: true)
     @collection.save
     redirect_to books_path
