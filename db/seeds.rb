@@ -15,6 +15,8 @@ end
 User.destroy_all
 40.times do
   user = User.new({
+    first_name: Faker::Name.first_name,
+    last_name: Faker::Name.last_name,
     email: Faker::Internet.email,
     password: "supermotdepasse1",
     password_confirmation: "supermotdepasse1",
