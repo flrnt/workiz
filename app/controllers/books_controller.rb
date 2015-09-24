@@ -10,7 +10,6 @@ class BooksController < ApplicationController
     @book = Book.new
     authorize @book
     @collection = Collection.new
-    authorize @collection
   end
   def create
     @book = Book.create(book_params)
