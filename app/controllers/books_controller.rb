@@ -4,6 +4,7 @@ class BooksController < ApplicationController
     @books = Book.all
   end
   def show
+    @owner = User.find(Collection.where(book_id:@book.id)[0][:user_id])
   end
   def new
     @book = Book.new
@@ -25,6 +26,7 @@ class BooksController < ApplicationController
     @book.destroy
     redirect_to books_path
   end
+
   private
   def set_book
     @book = Book.find(params[:id])
